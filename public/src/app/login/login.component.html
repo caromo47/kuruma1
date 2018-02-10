@@ -1,0 +1,66 @@
+<div id="body">
+	<div id="logcontainer">
+		<div id="login">
+			<h2>LOG IN</h2>
+			<form (submit)="loginValid()" #loginForm="ngForm">
+				<input type="email" name="logemail" placeholder="Email" [(ngModel)]="loggedUser.email" required>
+				<input type="password" name="logpassword" placeholder="password" [(ngModel)]="loggedUser.password" required>
+				<p class="errors" colspan="2" *ngFor="let error of errors">{{error.login.message}}</p>
+				<input type="submit" id="button" value="LOG IN">
+			</form>
+		</div>
+		<div id="registration">
+			<h2>REGISTER</h2>
+			<form (submit)="registerValid()" #regForm="ngForm">
+				<input type="text"
+				name="name"
+				placeholder="Name"
+				required
+				minlength="2"
+				maxlength="25"
+				[(ngModel)]="newUser.name"
+				#name="ngModel">
+				<p class="errors"
+					*ngIf="!name.valid && !name.pristine">
+					You need at least 2 characters
+				</p>
+				<input type="email"
+				name="email"
+				placeholder="Email"
+				required
+				minlength="4"
+				maxlength="35"
+				[(ngModel)]="newUser.email"
+				#email="ngModel">
+				<p class="errors"
+					*ngIf="!email.valid && !email.pristine">
+					You need a valid email
+				</p>
+				<input type="password"
+				name="password"
+				required
+				placeholder="Password"
+				minlength="7"
+				maxlength="25"
+				pattern="^([a-zA-Z0-9@*#]{8,15})$"
+				[(ngModel)]="newUser.password"
+				#password="ngModel">
+				<p class="errors" *ngIf="!password.valid && !password.pristine">You need at least 7 characters</p>
+				<input type="password"
+				name="confirmPassword"
+				placeholder="Confirm Password"
+				required
+				minlength="7"
+				maxlength="25"
+				pattern="^([a-zA-Z0-9@*#]{8,15})$"
+				[(ngModel)]="newUser.confirmPassword"
+				#confirmPassword="ngModel">
+				<p class="errors" *ngIf="newUser.password != newUser.confirmPassword">Your passwords dont match</p>
+				<input type="submit"
+				value="REGISTER"
+				id="button"
+				[disabled]="!regForm.valid">
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,53 @@
+.errors{
+	letter-spacing: 2px;
+	color: #e20c0c;
+}
+#body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0;
+	margin-top: 50px;
+	font-family: 'Lato', sans-serif;
+}
+#logcontainer{
+	display: justify;
+	height: 100%;
+	max-height: 100%;
+	margin-top: 75px;
+	text-align: center;
+	padding: 0;
+	width: 500px;
+}
+h2{
+	border-bottom: 1px solid #dcdcdc;
+}
+input{
+	display: block;
+	width: 75%;
+	letter-spacing: 2px;
+	text-transform: none;
+	margin: 10px auto;
+	font-size: 1.7em;
+}
+#button{
+	margin: auto;
+	background-color: #333;
+	color: white;
+	font-size: 1.2em;
+	width: 70%;
+	padding: 5px 5px;
+	cursor: pointer;
+}
+#login{
+	padding: 10px 2%;
+	width: 100%;
+	margin: 25px auto;
+}
+#registration{
+	padding: 10px 2%;
+	width: 100%;
+	border-top: none;
+	margin: auto;
+}

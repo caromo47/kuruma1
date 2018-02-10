@@ -1,0 +1,11 @@
+<div class="nav" id="myTopnav">
+	<a id="home" [routerLink]="['home']">車KURUMA</a>
+	<ul>
+		<li *ngIf="session"><a  [routerLink]="['cars']">Browse</a></li>
+		<li *ngIf="session"><a routerLinkActive="active" [routerLink]="['/dashboard/mycars']">Create Listings</a>
+		<li *ngIf="!session"><a class="session" [routerLink]="['login']">Sign In</a></li>
+		<li *ngIf="session"><a class="session" (click)="logout()">Sign Out</a></li>
+		<li><a href="javascript:void(0);" class="icon" (click)="dropDown()">&#9776;</a></li>
+	</ul>
+</div>
+<router-outlet></router-outlet>

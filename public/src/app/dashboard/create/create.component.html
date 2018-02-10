@@ -1,0 +1,51 @@
+<div id="container">
+	<div class="create">
+		<h3 id="createList">Create your listing here:</h3>
+		<div class="form">
+			<form (submit)="addCar(); carForm.resetForm()" #carForm="ngForm">
+				<div class="info">
+					<p>Title & Link</p>
+					<input type="text" name="title" placeholder="Title" required minlength="2" maxlength="25" [(ngModel)]="newCar.title" #title="ngModel">
+					<input type="text" name="image" placeholder="Image Url" required [(ngModel)]="newCar.image" #image="ngModel">
+				</div>
+				<div class="price">
+					<p>Price & Location</p>
+					<input type="number" name="price" placeholder="Price" required minValue="1" [(ngModel)]="newCar.price" #price="ngModel">
+					<input type="text" name="location" placeholder="Location" required [(ngModel)]="newCar.location" #location="ngModel">
+				</div>
+				<div class="desc">
+					<textarea name="description" rows="7" cols="40" placeholder="Description" required maxlength="200" [(ngModel)]="newCar.description" #description="ngModel">
+					</textarea>
+				</div>
+				<div class="btn">
+					<button type="submit" id="createbutton" [disabled]="!carForm.valid">CREATE</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="create edit" *ngFor="let car of myCars; let idx=index">
+		<h3>Edit listing here:</h3>
+		<div class="form">
+			<form (submit)="updateCar(idx)" #carForm="ngForm">
+				<div class="img">
+					<img src="{{car.image}}" alt="car image">
+				</div>
+				<div class="info2">
+					<input type="text" name="title" value="{{car.title}}" [(ngModel)]="car.title" #title="ngModel" required>
+				</div>
+				<div class="price2">
+					<p>Price & Location</p>
+					<input type="number" name="price" value="{{car.price}}" required minValue="1" [(ngModel)]="car.price" #price="ngModel">
+					<input type="text" name="location" value="{{car.location}}" required [(ngModel)]="car.location" #location="ngModel">
+				</div>
+				<div class="desc2">
+					<textarea name="desc" rows="10" cols="50" value="{{car.description}}" [(ngModel)]="car.description" #description="ngModel" required maxlength="200"></textarea>
+				</div>
+				<div class="btn">
+					<button type="submit" name="update" [disabled]="!carForm.form.valid">Update</button>
+					<button class="delete" (click)="deleteCar(idx)">Delete</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

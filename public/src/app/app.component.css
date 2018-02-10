@@ -1,0 +1,126 @@
+.session{
+	font-family: 'Abel', sans-serif;
+	padding: 0 4px;
+	border: 1px solid #f5f5f5;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.nav{
+	height: 50px;
+	background: #000000 !important;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+#home{
+	letter-spacing: 2px;
+	color: #f5f5f5;
+	padding-left: 2%;
+	padding-top: 7px;
+	cursor: pointer;
+	font-weight: lighter;
+	font-family: 'Abel', sans-serif;
+	display: inline-block;
+	font-size: 1.7em;
+	float: left;
+	background-color: #000000;
+}
+ul{
+	background: #000000;
+	font-family: 'Abel', sans-serif;
+	text-align: right;
+	display: inline-block;
+	padding-top: 12px;
+	float:right;
+	width: 50%;
+}
+ul li{
+	color: #f5f5f5;
+	display: inline-block;
+	text-align: right;
+	margin-right: 2%;
+}
+a{
+	text-decoration: none;
+	color: #f5f5f5;
+	font-size: 1.3em;
+	cursor: pointer;
+}
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+.nav .icon {
+  display: none;
+}
+@media only screen and (max-width : 700px){
+	.nav{
+		margin: 0;
+		position: absolute;
+		top: 0;
+		z-index: 100;
+		height: 50px;
+	}
+	.nav ul{
+		background-color: transparent;
+	}
+	.nav a {
+		display: none;
+		color: #ffffff !important;
+	}
+	.session{
+		display: none;
+		border: none;
+		padding: 0;
+	}
+	/* .active{
+		text-decoration: underline;
+	} */
+  .nav a.icon {
+    display: block !important;
+		position: absolute;
+		top: 8px;
+		right: 2%;
+		text-decoration: none !important;
+  }
+	.nav a.icon:hover {
+		background: inherit;
+		cursor: pointer;
+	}
+	.nav.responsive {
+		position: absolute;
+		height: auto;
+		background: #000000 !important;
+		width: 100%;
+		z-index: 100;
+	}
+	.nav.responsive a {
+		display: block;
+		padding: 5px 2%;
+	}
+	#home {
+		display: block;
+		float: none;
+	}
+	.nav.responsive a.icon {
+		position: absolute;
+		right: 2%;
+		top: 8px;
+		text-decoration: none !important;
+		color: #ffffff !important;
+		padding: 0;
+	}
+	.nav.responsive a.icon:hover {
+		background: #000000;
+		cursor: pointer;
+	}
+	.nav.responsive ul {
+		float: none;
+		display: block;
+	}
+	.nav.responsive ul li {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}

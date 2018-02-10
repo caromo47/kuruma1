@@ -1,0 +1,27 @@
+<div id="searchBar">
+	<p>Search by Title or Location:</p>
+	<input type="text" name="search"
+		[(ngModel)]="searchTerm"
+		#search = "ngModel"
+		(keyup)="searchCars()"
+		>
+</div>
+<div id='container'>
+  <div *ngFor="let car of allCars; let idx=index" class="browse">
+		<div class="img">
+			<img src="{{ car.image }}" height="250px">
+		</div>
+		<div class="title">
+			<p>Title: {{ car.title }}</p>
+	    <p>Price: {{ car.price | currency:USD:symbol }}</p>
+	    <p>Location: {{ car.location }}</p>
+		</div>
+		<div class="desc">
+			 <p>{{ car.description }}</p>
+		</div>
+		<div class="btns">
+			<button (click)="onContact(car._user)" *ngIf=" car._user != currentUser">Contact</button>
+	    <button (click)="onDelete(idx)" *ngIf="car._user == currentUser">Delete</button>
+		</div>
+  </div>
+</div>
